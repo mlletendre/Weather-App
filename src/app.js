@@ -1,6 +1,6 @@
 //
 let now = new Date();
-let TodayDate = document.querySelector("h3");
+let TodayDate = document.querySelector("#date");
 
 let days = [
   "Sunday",
