@@ -27,17 +27,23 @@ TodayDate.innerHTML = `${day} ${hours}:${minutes}`;
 //
 
 function showWeather(response) {
-  document.querySelector(
-    "#description"
-  ).innerHTML = `${response.data.weather[0].main}`;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `${response.data.main.humidity}`;
-  document.querySelector("#wind").innerHTML = `${response.data.wind.speed}`;
-  document.querySelector("h1").innerHTML = `${response.data.name}`;
-  document.querySelector("#currentTemp").innerHTML = Math.round(
-    response.data.main.temp
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let h1Element = document.querySelector("h1");
+  let currentElement = document.querySelector("#currentTemp");
+  let iconElement = document.querySelector("#icon");
+
+  descriptionElement.innerHTML = `${response.data.weather[0].main}`;
+  humidityElement.innerHTML = `${response.data.main.humidity}`;
+  windElement.innerHTML = `${response.data.wind.speed}`;
+  h1Element.innerHTML = `${response.data.name}`;
+  currentElement.innerHTML = Math.round(response.data.main.temp);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getLocation(position) {

@@ -3,6 +3,7 @@ body {
 }
 
 h1 {
+  display: inline;
   font-size: 35px;
   padding-top: 30px;
   color: #272044;
