@@ -11,7 +11,6 @@
       integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
       crossorigin="anonymous"
     />
-
     <script
       src="https://kit.fontawesome.com/972095e662.js"
       crossorigin="anonymous"
@@ -19,6 +18,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    <div class="weather-app">
     <div class="container">
       <form id="search-form">
         <input
@@ -42,7 +42,7 @@
         </div>
       </form>
       <h1>Hong Kong</h1>
-      <h2><span id="currentTemp"> 23</span> °C</h2>
+      <h2><span id="currentTemp"> 23 </span> <span class="units"> °C</span></h2>
       <h3>Today Date</h3>
       <ul class="weather">
         <li id="description">Partly Cloudy</li>
@@ -106,6 +106,7 @@
         <a href="https://github.com/mlletendre/SheCodesPlus">Open Source Code</a>
         by Marie-Louise Letendre
       </div>
+    </div>
     </div>
     <script src="src/app.js"></script>
   </body>
