@@ -34,11 +34,13 @@ function showWeather(response) {
   let currentElement = document.querySelector("#currentTemp");
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemperature = response.data.main.temp;
+
   descriptionElement.innerHTML = `${response.data.weather[0].main}`;
   humidityElement.innerHTML = `${response.data.main.humidity}`;
   windElement.innerHTML = `${response.data.wind.speed}`;
   h1Element.innerHTML = `${response.data.name}`;
-  currentElement.innerHTML = Math.round(response.data.main.temp);
+  currentElement.innerHTML = Math.round(celsiusTemperature);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -73,7 +75,33 @@ function handleSubmit(event) {
   let city = document.querySelector("#search-text-input").value;
   search(city);
 }
+
+let celsiusTemperature = null;
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let conversionElement = document.querySelector("#currentTemp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  conversionElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let conversionElement = document.querySelector("#currentTemp");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  conversionElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Hong Kong");

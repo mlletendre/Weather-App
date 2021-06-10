@@ -12,6 +12,16 @@ h1 {
 .temperature {
   display: inline;
   font-size: 60px;
+  text-decoration: none;
+}
+
+.temperature .active {
+  color: black;
+  cursor: default;
+}
+
+.temperature .active:hover {
+  text-decoration: none;
 }
 
 .card-title {
@@ -62,6 +72,7 @@ h1 {
 
 .units {
   font-size: 20px;
+  text-decoration: none;
 }
 
 .weather-temperature {
