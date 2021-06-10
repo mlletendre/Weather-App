@@ -9,19 +9,13 @@ h1 {
   color: #272044;
 }
 
-.temperature {
+li:first-letter {
+  text-transform: capitalize;
+}
+
+.current-temperature {
   display: inline;
   font-size: 60px;
-  text-decoration: none;
-}
-
-.temperature .active {
-  color: black;
-  cursor: default;
-}
-
-.temperature .active:hover {
-  text-decoration: none;
 }
 
 .card-title {
@@ -75,7 +69,13 @@ h1 {
   text-decoration: none;
 }
 
+.units .active {
+  color: black;
+  cursor: default;
+}
+
 .weather-temperature {
   display: inline;
   float: left;
+  text-decoration: none;
 }

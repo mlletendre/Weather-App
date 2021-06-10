@@ -36,7 +36,7 @@ function showWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  descriptionElement.innerHTML = `${response.data.weather[0].main}`;
+  descriptionElement.innerHTML = `${response.data.weather[0].description}`;
   humidityElement.innerHTML = `${response.data.main.humidity}`;
   windElement.innerHTML = `${response.data.wind.speed}`;
   h1Element.innerHTML = `${response.data.name}`;
