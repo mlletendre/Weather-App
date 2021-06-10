@@ -20,7 +20,9 @@
   <body>
     <div class="weather-app">
     <div class="container">
-      <form id="search-form">
+      <form id="search-form" class="nb=3">
+      <div class="row">
+          <div class="col-6">
         <input
           autocomplete="off"
           class="form-control"
@@ -28,10 +30,12 @@
           placeholder="Search for your city"
           type="text"
         />
-        <div id="buttons" class="button-box col-lg-12">
+        </div>
+        <div class="col-3">
           <button id="Search-Button" class="btn btn-secondary" type="submit">
-            Search
-          </button>
+            Search </button>
+        </div>
+          <div class="col-3">
           <button
             id="Current-Location-Button"
             class="btn btn-secondary"
@@ -39,6 +43,7 @@
           >
             Current Location
           </button>
+        </div>
         </div>
       </form>
         <div class="row">
@@ -52,7 +57,7 @@
                   <strong id="temperature"></strong>
                 </div>
               </div>
-            <div class=temperature> <span id="currentTemp"> 23 </span> <span class="units"> °C</span></div>
+            <div class=temperature> <span id="currentTemp"> 23 </span> <span class="units"> °C | <a href="#">F°</a> </span></div>
               </div>
           </div>
       <ul class="weather">
@@ -113,12 +118,12 @@
           </div>
         </div>
       </div>
-      <div class="footer">
+    </div>
+    <div class="footer">
       </br>
         <a href="https://github.com/mlletendre/SheCodesPlus">Open Source Code</a>
         by Marie-Louise Letendre
       </div>
-    </div>
     </div>
     <script src="src/app.js"></script>
   </body>

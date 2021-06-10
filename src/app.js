@@ -75,3 +75,5 @@ function handleSubmit(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+search("Hong Kong");
