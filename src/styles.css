@@ -16,7 +16,6 @@ li:first-letter {
 .current-temperature {
   display: inline;
   font-size: 60px;
-  text-decoration: none;
 }
 
 .card-title {
@@ -65,7 +64,8 @@ li:first-letter {
   text-align: center;
 }
 
-.units {
+.units,
+.units a {
   font-size: 20px;
   text-decoration: none;
 }
