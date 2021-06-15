@@ -1,35 +1,34 @@
-//
-let now = new Date();
-let TodayDate = document.querySelector("#date");
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let day = days[now.getDay()];
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-TodayDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 //
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
   let forecastHTML = `<div class="row">`;
   days.forEach(function (day) {
@@ -53,12 +52,19 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "76bf6933b6922de0cde6be9b8c4a3589";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 //
 
 function showWeather(response) {
+  let dateElement = document.querySelector("#date");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
@@ -68,6 +74,7 @@ function showWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   descriptionElement.innerHTML = `${response.data.weather[0].description}`;
   humidityElement.innerHTML = `${response.data.main.humidity}`;
   windElement.innerHTML = `${response.data.wind.speed}`;
@@ -78,6 +85,8 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function getLocation(position) {
@@ -137,4 +146,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Hong Kong");
-displayForecast();
