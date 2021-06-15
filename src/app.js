@@ -26,6 +26,38 @@ TodayDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 //
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+          <div class="col-2">
+            <div class="card">
+              <div class="weather-forecast-date">${day}</div>
+              <img
+              src="http://openweathermap.org/img/wn/50d@2x.png"
+              alt=""
+              />
+              <div class="weather-forecast-temperature">
+              25°C | 21°C
+              </div>
+          </div>
+        </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+//
+
 function showWeather(response) {
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
@@ -105,3 +137,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Hong Kong");
+displayForecast();

@@ -46,72 +46,36 @@
         </div>
         </div>
       </form>
-        <div class="row">
-            <div class="col-6">
-              <h1>Hong Kong</h1>
-            </div>
-            <div class="col-6">
-              <div class="clearfix weather-temperature">
-                <img src="" alt="Clear" id="icon" class="float-left" />
-                <div class="float-left">
-                  <strong id="temperature"></strong>
-                </div>
-              </div>
-              <div class="current-temperature"> <span id="currentTemp"> 23 </span> <span class="units"> <a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a> </span></div> 
-              </div>
-          </div>
+       <div class="row align-items-center">
+    <div class="col-6">
+      <h1>Hong Kong</h1>
+    </div>
+    <div class="col-6">
+      <div class="d-flex weather-temperature align-items-center">
+        <img src="" alt="Clear" id="icon" class="float-left" />
+        <div class="current-temperature d-flex"> 
+          <span id="currentTemp"> 23 </span> 
+          <span class="units"> 
+            <a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a> 
+          </span>
+        </div> 
+      </div>
+    </div>
+</div>
       <ul class="weather">
         <li id="date">Today Date</li>
         <li id="description">Partly Cloudy</li>
         <li>Humidity: <span id="humidity"></span>%</li>
         <li>Wind: <span id="wind"></span>km/h</li>
       </ul>
-      <div class="Days">
+      <div class="weather-forecast" id="forecast">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-2">
             <div class="card">
-              <div class="card-body">
+              <div class="weather-forecast-date">
                 <h5 class="card-title">Friday</h5>
-                <p class="card-text">
-                  <i class="fas fa-cloud-showers-heavy showers-icon"></i>
-                  <br />
+                <div class="weather-forecast-temperature">
                   25°C | 21°C
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Saturday</h5>
-                <p class="card-text">
-                  <i class="fas fa-cloud-rain cloud-icon"></i>
-                  <br />
-                  28°C | 22°C
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Sunday</h5>
-                <p class="card-text">
-                  <i class="far fa-sun sun-icon"></i>
-                  <br />
-                  29°C | 22°C
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Monday</h5>
-                <p class="card-text">
-                  <i class="fas fa-cloud-sun-rain cloud-sun-icon"></i>
-                  <br />
-                  27°C | 19°C
                 </p>
               </div>
             </div>
