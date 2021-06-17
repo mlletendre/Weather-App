@@ -4,7 +4,7 @@ body {
 
 h1 {
   display: inline;
-  color: black;
+  color: #212529;
   font-size: 60px;
 }
 
@@ -28,9 +28,9 @@ li:first-letter {
   text-align: center;
 }
 
-.icon {
-  width: 10px;
-  height: 10px;
+#icon {
+  width: 125px;
+  height: 125px;
 }
 
 .weather {
