@@ -21,6 +21,11 @@ li:first-letter {
 
 .footer {
   font-size: 12px;
+  text-align: center;
+}
+
+.icon {
+  font-size: 400px;
 }
 
 .weather {
@@ -59,20 +64,16 @@ li:first-letter {
   text-decoration: none;
 }
 
+.weather-forecast-temperature-min {
+  color: #a5a8ad;
+}
+
 .row {
   padding-top: 30px;
 }
 
 .row g-3 {
   position: fixed;
-}
-
-.sun-icon,
-.showers-icon,
-.cloud-icon,
-.cloud-sun-icon {
-  font-size: 100px;
-  text-align: center;
 }
 
 .units,

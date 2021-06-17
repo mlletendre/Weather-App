@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,63 +19,65 @@
   </head>
   <body>
     <div class="weather-app">
-    <div class="container">
-      <form id="search-form" class="nb=3">
-      <div class="row">
+      <div class="container">
+        <form id="search-form" class="nb=3">
+          <div class="row">
+            <div class="col-6">
+              <input
+                autocomplete="off"
+                class="form-control"
+                id="search-text-input"
+                placeholder="Search for your city"
+                type="text"
+              />
+            </div>
+            <div class="col-3">
+              <button
+                id="Search-Button"
+                class="btn btn-secondary"
+                type="submit"
+              >
+                Search
+              </button>
+            </div>
+            <div class="col-3">
+              <button
+                id="Current-Location-Button"
+                class="btn btn-secondary"
+                type="submit"
+              >
+                Current Location
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="row align-items-center">
           <div class="col-6">
-        <input
-          autocomplete="off"
-          class="form-control"
-          id="search-text-input"
-          placeholder="Search for your city"
-          type="text"
-        />
+            <h1>Hong Kong</h1>
+          </div>
+          <div class="col-6">
+            <div class="d-flex weather-temperature align-items-center">
+              <img src="" alt="Clear" id="icon" class="float-left" />
+              <div class="current-temperature d-flex">
+                <span id="currentTemp"> 23 </span>
+                <span class="units">°C</a>
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-3">
-          <button id="Search-Button" class="btn btn-secondary" type="submit">
-            Search </button>
-        </div>
-          <div class="col-3">
-          <button
-            id="Current-Location-Button"
-            class="btn btn-secondary"
-            type="submit"
-          >
-            Current Location
-          </button>
-        </div>
-        </div>
-      </form>
-       <div class="row align-items-center">
-    <div class="col-6">
-      <h1>Hong Kong</h1>
-    </div>
-    <div class="col-6">
-      <div class="d-flex weather-temperature align-items-center">
-        <img src="" alt="Clear" id="icon" class="float-left" />
-        <div class="current-temperature d-flex"> 
-          <span id="currentTemp"> 23 </span> 
-          <span class="units"> 
-            <a href="#" id="celsius-link" class="active">°C</a> | <a href="#" id="fahrenheit-link">°F</a> 
-          </span>
-        </div> 
-      </div>
-    </div>
-</div>
-      <ul class="weather">
-        <li id="date">Today Date</li>
-        <li id="description">Partly Cloudy</li>
-        <li>Humidity: <span id="humidity"></span>%</li>
-        <li>Wind: <span id="wind"></span>km/h</li>
-      </ul>
-      <div class="weather-forecast" id="forecast">
+        <ul class="weather">
+          <li id="date">Today Date</li>
+          <li id="description">Partly Cloudy</li>
+          <li>Humidity: <span id="humidity"></span>%</li>
+          <li>Wind: <span id="wind"></span>km/h</li>
+        </ul>
+        <div class="weather-forecast" id="forecast"></div>
       </div>
     </div>
     <div class="footer">
-      </br>
-        <a href="https://github.com/mlletendre/Weather-App">Open Source Code</a>
-        by Marie-Louise Letendre
-      </div>
+      <a href="https://github.com/mlletendre/Weather-App">Open Source Code</a>
+      by Marie-Louise Letendre
     </div>
     <script src="src/app.js"></script>
   </body>
