@@ -4,9 +4,12 @@ body {
 
 h1 {
   display: inline;
-  font-size: 45px;
-  padding-top: 30px;
-  color: #272044;
+  color: black;
+  font-size: 100px;
+}
+
+li {
+  color: #5c636a;
 }
 
 li:first-letter {
@@ -14,18 +17,15 @@ li:first-letter {
 }
 
 .current-temperature {
-  font-size: 60px;
+  font-size: 75px;
   text-decoration: none;
   line-height: 1;
 }
 
 .footer {
+  color: #5c636a;
   font-size: 12px;
   text-align: center;
-}
-
-.icon {
-  font-size: 400px;
 }
 
 .weather {
@@ -36,10 +36,11 @@ li:first-letter {
 }
 
 .weather-app {
-  border: 1px solid #dadde1;
+  background-color: white;
+  border: 1px;
+  box-shadow: 0 30px 50px rgb(165, 168, 173);
   max-width: 900px;
   margin: 60px auto;
-  background: #fff;
   border-radius: 16px;
   padding: 40px;
 }
@@ -56,6 +57,7 @@ li:first-letter {
   display: block;
   font-size: 15px;
   text-align: center;
+  padding-bottom: 20px;
 }
 
 .weather-temperature {
@@ -66,6 +68,11 @@ li:first-letter {
 
 .weather-forecast-temperature-min {
   color: #a5a8ad;
+}
+
+.weather-forecast-date,
+.weather-forecast-temperature-max {
+  color: #5c636a;
 }
 
 .row {
