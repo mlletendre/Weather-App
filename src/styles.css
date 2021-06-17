@@ -5,7 +5,7 @@ body {
 h1 {
   display: inline;
   color: black;
-  font-size: 100px;
+  font-size: 60px;
 }
 
 li {
@@ -26,6 +26,11 @@ li:first-letter {
   color: #5c636a;
   font-size: 12px;
   text-align: center;
+}
+
+.icon {
+  width: 10px;
+  height: 10px;
 }
 
 .weather {
@@ -60,12 +65,6 @@ li:first-letter {
   padding-bottom: 20px;
 }
 
-.weather-temperature {
-  display: inline;
-  float: left;
-  text-decoration: none;
-}
-
 .weather-forecast-temperature-min {
   color: #a5a8ad;
 }
@@ -87,9 +86,4 @@ li:first-letter {
 .units a {
   font-size: 20px;
   text-decoration: none;
-}
-
-.units .active {
-  color: black;
-  cursor: default;
 }
